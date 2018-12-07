@@ -1,0 +1,15 @@
+{
+   "width":256,
+   "imagePath":"test_new_tex.png",
+   "height":256,
+   "name":"test_new",
+   "SubTexture":[
+      {
+         "width":256,
+         "y":0,
+         "height":256,
+         "name":"grid",
+         "x":0
+      }
+   ]
+}

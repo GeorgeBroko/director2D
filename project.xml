@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="DRC3D" package="DRC3D" version="1.0.0" company="Elias Fedorenko" />
+	
+	<!-- output -->
+	<app main="Main" file="DRC3D" path="bin" />
+	
+	<window background="#000000" fps="60" />
+	<window width="640" height="480" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="nape" />
+	<haxelib name="dragonbones" />
+	<haxelib name="minimalcomps" />
+	
+	<!-- assets -->
+	<!-- <library name="default" type="pak" /> -->
+	
+	<icon path="res/icon.ico" />
+	
+	<assets path="res/armatures" rename="armatures" />
+	<assets path="res/fonts" rename="fonts" />
+	<assets path="res/profiles" rename="profiles" />
+	<assets path="res/scripts" rename="scripts" />
+	<assets path="res/music" rename="music" />
+	<assets path="res/shaders" rename="shaders" />
+	<assets path="res/textures" rename="textures" />
+	
+	<!-- optimize output
+	<haxeflag name="-dce full" /> -->
+	
+	<haxeflag name="-dce full" /> 
+	
+</project>

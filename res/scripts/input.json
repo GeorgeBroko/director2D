@@ -1,0 +1,11 @@
+{
+	"name": "input",
+	
+	"gamepads": true,
+	
+	"gamepadsCount": 2,
+	
+	"keyboard": true,
+	
+	"mouse": true
+}

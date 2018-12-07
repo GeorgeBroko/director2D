@@ -1,0 +1,5 @@
+// Best practices for textures!
+//
+// 1:Use POT (power of 2) textures.
+// 2:Use png format.
+// 3:Optimize your final image to decrease loading times. 

@@ -1,0 +1,152 @@
+{
+	"controls": [
+
+	{
+		"id": 0,
+		"name": "analog_axis_left_x",
+		"active": true,
+		"threshold": 0.2
+	},
+
+	{
+		"id": 1,
+		"name": "analog_axis_left_y",
+		"active": true,
+		"threshold": 0.2
+	},
+
+	{
+		"id": 2,
+		"name": "analog_axis_right_x",
+		"active": true,
+		"threshold": 0.2
+	},
+
+	{
+		"id": 3,
+		"name": "analog_axis_right_y",
+		"active": true,
+		"threshold": 0.2
+	},
+
+	{
+		"id": 4,
+		"name": "trigger_left",
+		"active": true,
+		"threshold": 0.2
+	},
+
+	{
+		"id": 5,
+		"name": "trigger_right",
+		"active": true,
+		"threshold": 0.2
+	},
+
+	{
+		"id": 6,
+		"name": "button_a",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 7,
+		"name": "button_b",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 8,
+		"name": "button_x",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 9,
+		"name": "button_y",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 10,
+		"name": "button_back",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 11,
+		"name": "button_guide",
+		"active": false,
+		"threshold": 0
+	},
+
+	{
+		"id": 12,
+		"name": "button_start",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 13,
+		"name": "analog_left",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 14,
+		"name": "analog_right",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 15,
+		"name": "shoulder_left",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 16,
+		"name": "shoulder_right",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 17,
+		"name": "dpad_down",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 18,
+		"name": "dpad_up",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 19,
+		"name": "dpad_left",
+		"active": true,
+		"threshold": 0
+	},
+
+	{
+		"id": 20,
+		"name": "dpad_right",
+		"active": true,
+		"threshold": 0
+	}
+
+	]
+}
