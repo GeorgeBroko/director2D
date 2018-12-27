@@ -1,0 +1,23 @@
+{
+	"name": "screen",
+	
+	"dataPerVertex": 5,
+	
+	"attributes":[
+	
+	{"name": "space", "format": "float3", "position": 0},
+	
+	{"name": "texture", "format": "float2", "position": 3}
+	
+	],
+	
+	"constants":[
+	
+	],
+	
+	"programName": "screen",
+	
+	"vertexShader": "screen.vert",
+	
+	"fragmentShader": "screen.frag"
+}

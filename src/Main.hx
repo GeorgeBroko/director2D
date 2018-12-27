@@ -17,6 +17,6 @@ class Main extends DrcView
 	{
 		super.init();
 		
-		addScene(new BunnyMark());
+		addScene(new Test());
 	}
 }

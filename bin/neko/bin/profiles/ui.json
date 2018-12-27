@@ -1,0 +1,27 @@
+{
+	"name": "ui",
+	
+	"dataPerVertex": 6,
+	
+	"attributes":[
+	
+	{"name": "space", "format": "float4", "position": 0},
+	
+	{"name": "texture", "format": "float2", "position": 4}
+	
+	],
+	
+	"constants":[
+	
+	{"name": "_a", "format": "float4"},
+	
+	{"name": "_b", "format": "float4"}
+	
+	],
+	
+	"programName": "ui",
+	
+	"vertexShader": "ui.vert",
+	
+	"fragmentShader": "ui.frag"
+}
