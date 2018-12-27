@@ -64,11 +64,11 @@ class DrcScreen extends DrcMesh
 		
 		//** Append matrix translation to center the screen.
 		
-		matrix.appendTranslation(-320, 240, 0);
+		matrix.appendTranslation(-320, -240, 0);
 		
 		//** Render the camera.
 		
-		camera.render(matrix, false);
+		camera.render(matrix, true);
 		
 		//__context.setPointsEnabled();
 	}

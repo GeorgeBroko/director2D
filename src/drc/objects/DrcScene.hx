@@ -46,7 +46,7 @@ class DrcScene extends DrcObject
 	{
 		super();
 		
-		camera.viewMatrix.appendTranslation( -320, -240, 0);
+		//camera.viewMatrix.appendTranslation(-320, -240, 0);
 		
 		#if debug // ------
 		

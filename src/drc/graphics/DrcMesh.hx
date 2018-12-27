@@ -49,7 +49,7 @@ class DrcMesh extends DrcGraphic
 		
 		vertices.upload(new Vector<Float>(
 		[0, 0, 0, 0, 1, 
-		0, -960, 0, 0, -1,  
+		0, 960, 0, 0, -1,  
 		1280, 0, 0, 2, 1]));
 		
 		vertices.__dataPerVertex = profile.dataPerVertex;

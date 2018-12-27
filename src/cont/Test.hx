@@ -44,7 +44,7 @@ class Test extends DrcScene
 	{
 		super();
 		
-		camera.viewMatrix.appendTranslation(-320, -240, 0);
+		//camera.viewMatrix.appendTranslation(-320, -240, 0);
 		
 		__profile = new DrcProfile("profiles/default.json");
 		

@@ -29,6 +29,6 @@ class DrcImage extends DrcMesh
 		0, 960, 0, 0, 0, 2,  
 		1280, 0, 0, 0, 2, 0]));
 		
-		indices.upload(new Vector<UInt>([0, 1, 2]));
+		indices.upload(new Vector<UInt>([0, 1, 2, 0, 2, 3]));
 	}
 }
