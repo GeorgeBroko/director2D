@@ -36,6 +36,16 @@ class DrcScene extends DrcObject
 	 */
 	public var layer:Int;
 	
+	/**
+	 * The X position of the mouse in the scene. Cannot be set.
+	 */
+	public var mouseX(get, null):Float;
+	
+	/**
+	 * The Y position of the mouse in the scene. Cannot be set.
+	 */
+	public var mouseY(get, null):Float;
+	
 	#if debug // ------
 	
 	private var __console:DrcConsole;
@@ -105,5 +115,17 @@ class DrcScene extends DrcObject
 	private function __updateEntities(entity:DrcEntity):Void
 	{
 		entity.update();
+	}
+	
+	//** Getters and setters.
+	
+	private function get_mouseX():Float
+	{
+		return DrcCommon.view.mouseX + camera.viewMatrix.position.x;
+	}
+	
+	private function get_mouseY():Float
+	{
+		return  DrcCommon.view.mouseY + camera.viewMatrix.position.y;
 	}
 }

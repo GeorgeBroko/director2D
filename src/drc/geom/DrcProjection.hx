@@ -19,7 +19,7 @@ class DrcProjection extends DrcMatrix
 		sx, 0.0, 0.0, 0.0,
 		0.0, -sy, 0.0, 0.0, 
 		0.0, 0.0, (zFar - zNear), 0, 
-		0, 0, zNear / (zNear - zFar), 1.0]));
+		-1, 1, zNear / (zNear - zFar), 1.0]));
 	}
 	
 	public function orthographicFlipped(width:Float, height:Float, zNear:Float, zFar:Float):Void
@@ -30,7 +30,7 @@ class DrcProjection extends DrcMatrix
 		
 		this.copyRawDataFrom(Vector.ofArray([
 		sx, 0.0, 0.0, 0.0,
-		0.0, sy, 0.0, 0.0, 
+		0.0, sy, 0.0, 0.0,
 		0.0, 0.0, (zFar - zNear), 0, 
 		0, 0, zNear / (zNear - zFar), 1.0]));
 	}

@@ -115,5 +115,8 @@ class Test extends DrcScene
 		//__image.x = __tween.value;
 		
 		//trace(__tween.value);
+		
+		trace(mouseX);
+		trace(mouseY);
 	}
 }

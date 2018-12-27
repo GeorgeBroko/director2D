@@ -179,7 +179,7 @@ class DrcScreen extends DrcMesh
 			
 			//** Increment of program changes.
 			
-			trace(mesh.profile.program.name);
+			//trace(mesh.profile.program.name);
 			
 			__programChanges ++;
 		}
