@@ -4,10 +4,10 @@ import drc.debug.DrcConsole;
 import drc.input.DrcGamepad;
 import drc.input.DrcKeyboard;
 import drc.input.DrcMouse;
+import drc.utils.DrcCommon;
 import openfl.Vector;
 import openfl.events.GameInputEvent;
 import openfl.ui.GameInput;
-import drc.utils.DrcCommon;
 
 @:final
 class DrcInput //** Define metadata: final.
@@ -29,7 +29,7 @@ class DrcInput //** Define metadata: final.
 	/**
 	 * The number of all available gamepads. Cannot be set.
 	 */
-	public var gamepadsCount(get, null):Int;
+	public var gamepadCount(get, null):Int;
 	
 	/**
 	 * A list of every available joystick.
@@ -103,16 +103,30 @@ class DrcInput //** Define metadata: final.
 		
 		#end // ------
 		
+		//** If keyboard is enabled...
+		
 		if (inputScript.get("keyboard"))
 		{
+			//** Create a new keyboard class.
+			
 			keyboard = new DrcKeyboard();
+			
+			//** Init the keyboard.
 			
 			keyboard.init();
 		}
 		
+		//** If mouse is enabled...
+		
 		if (inputScript.get("Mouse"))
 		{
-			//mouse.init();
+			//** Create a new mouse class.
+			
+			mouse = new DrcMouse();
+			
+			//** Init the mouse.
+			
+			mouse.init();
 		}
 	}
 	
@@ -128,7 +142,7 @@ class DrcInput //** Define metadata: final.
 	{
 		//** Find an empty slot and assign a gamepad to it.
 		
-		for (i in 0...gamepadsCount) 
+		for (i in 0...gamepadCount) 
 		{
 			if (!gamepads[i].active)
 			{
@@ -147,6 +161,8 @@ class DrcInput //** Define metadata: final.
 	
 	private function __onDeviceRemoved(event:GameInputEvent):Void
 	{
+		//** Disable the device.
+		
 		event.device.enabled = false;
 	}
 	
@@ -167,7 +183,9 @@ class DrcInput //** Define metadata: final.
 	{
 		#if windows // ------
 		
-		for (i in 0...gamepadsCount) 
+		//** For each gamepad...
+		
+		for (i in 0...gamepadCount) 
 		{
 			//** Post update every active gamepad.
 			
@@ -179,11 +197,15 @@ class DrcInput //** Define metadata: final.
 		//** Post update the keyboard.
 		
 		keyboard.postUpdate();
+		
+		//** Post update the mouse.
+		
+		mouse.postUpdate();
 	}
 	
 	// ** Getters and setters.
 	
-	private function get_gamepadsCount():Int
+	private function get_gamepadCount():Int
 	{
 		return gamepads.length;
 	}

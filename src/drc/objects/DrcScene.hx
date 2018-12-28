@@ -121,11 +121,11 @@ class DrcScene extends DrcObject
 	
 	private function get_mouseX():Float
 	{
-		return DrcCommon.view.mouseX + camera.viewMatrix.position.x;
+		return DrcCommon.view.mouseX - camera.viewMatrix.position.x;
 	}
 	
 	private function get_mouseY():Float
 	{
-		return  DrcCommon.view.mouseY + camera.viewMatrix.position.y;
+		return  DrcCommon.view.mouseY - camera.viewMatrix.position.y;
 	}
 }

@@ -1,20 +1,20 @@
 package cont;
 
+import drc.anim.DrcArmature;
 import drc.anim.DrcArmatureData;
 import drc.anim.DrcSkeletonParser;
 import drc.display.DrcProfile;
 import drc.graphics.DrcImage;
 import drc.graphics.DrcTile;
 import drc.graphics.DrcTileMap;
+import drc.input.DrcKey;
 import drc.objects.DrcScene;
 import drc.sound.DrcSound;
 import drc.tweens.DrcNumTween;
-import lime.media.AudioBuffer;
+import drc.utils.DrcCommon;
 import openfl.display.BitmapData;
 import openfl.geom.Rectangle;
 import openfl.utils.Assets;
-import drc.tweens.DrcTweenType;
-import drc.anim.DrcArmature;
 
 class Test extends DrcScene
 {
@@ -116,7 +116,19 @@ class Test extends DrcScene
 		
 		//trace(__tween.value);
 		
-		trace(mouseX);
-		trace(mouseY);
+		trace(DrcCommon.input.keyboard.check(DrcKey.RIGHT));
+		
+		if (DrcCommon.input.keyboard.check(DrcKey.RIGHT))
+		{
+			camera.viewMatrix.appendTranslation(-4, 0, 0);
+		}
+		
+		if (DrcCommon.input.keyboard.check(DrcKey.LEFT))
+		{
+			camera.viewMatrix.appendTranslation(4, 0, 0);
+		}
+		
+		//trace(mouseX);
+		//trace(mouseY);
 	}
 }

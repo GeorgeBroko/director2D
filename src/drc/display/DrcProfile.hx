@@ -99,11 +99,11 @@ class DrcProfile
 		
 		constants.push(new DrcConstant("matrix", getUniformLocation("_matrix")));
 		
-		trace(const.length);
+		//trace(const.length);
 		
 		for (count in 0...const.length)
 		{
-			trace(const[count].name);
+			//trace(const[count].name);
 			
 			var name:String = const[count].name;
 			

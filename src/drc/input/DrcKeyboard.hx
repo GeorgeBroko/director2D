@@ -12,7 +12,7 @@ class DrcKeyboard extends DrcDevice
 	/**
 	 * The default count of keys.
 	 */
-	public static inline var CONST_CONTROLS:Int32 = 21;
+	public static inline var CONST_CONTROLS:Int32 = 221;
 	
 	public function new() 
 	{
