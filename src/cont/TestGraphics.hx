@@ -8,6 +8,7 @@ import drc.graphics.DrcTile;
 import drc.graphics.DrcTileMap;
 import drc.objects.DrcScene;
 import openfl.display.BitmapData;
+import openfl.geom.Rectangle;
 import openfl.utils.Assets;
 
 class TestGraphics extends DrcScene
@@ -30,7 +31,7 @@ class TestGraphics extends DrcScene
 	{
 		super();
 		
-		camera.viewMatrix.appendTranslation(-320, -240, 0);
+		//camera.viewMatrix.appendTranslation(-320, -240, 0);
 		
 		__profile = new DrcProfile("profiles/default.json");
 		
@@ -40,7 +41,9 @@ class TestGraphics extends DrcScene
 		
 		__tilemap = new DrcTileMap(__profile, Assets.getBitmapData("textures/cats.png"));
 		
-		__tile = new DrcTile(__tilemap);
+		__tilemap.regions.push(new Rectangle(0, 0, 32, 32));
+		
+		__tile = new DrcTile(__tilemap, 0);
 		
 		__tile.y = 64;
 		
@@ -54,8 +57,8 @@ class TestGraphics extends DrcScene
 		
 		__meshmap.addMesh(__mesh);
 		
-		addGraphic(__background);
+		//addGraphic(__background);
 		
-		addGraphic(__meshmap);
+		addGraphic(__tilemap);
 	}
 }

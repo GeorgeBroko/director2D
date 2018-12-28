@@ -4,6 +4,7 @@ import cont.TestGraphics;
 import cont.Test;
 import cont.UiTest;
 import cont.BunnyMark;
+import cont.TestEmitter;
 import src.drc.core.DrcView;
 
 class Main extends DrcView
@@ -17,6 +18,6 @@ class Main extends DrcView
 	{
 		super.init();
 		
-		addScene(new Test());
+		addScene(new TestEmitter());
 	}
 }

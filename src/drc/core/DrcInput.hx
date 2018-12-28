@@ -200,7 +200,7 @@ class DrcInput //** Define metadata: final.
 		
 		//** Post update the mouse.
 		
-		mouse.postUpdate();
+		//mouse.postUpdate();
 	}
 	
 	// ** Getters and setters.
