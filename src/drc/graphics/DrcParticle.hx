@@ -5,12 +5,21 @@ import drc.objects.DrcEntity;
 
 class DrcParticle extends DrcEntity
 {
-	public var destinationX:Float;
+	public var velocityX:Float;
 	
-	public var destinationY:Float;
+	public var velocityY:Float;
 	
 	public function new() 
 	{
 		super();
+	}
+	
+	override public function update():Void 
+	{
+		x += velocityX;
+		
+		y += velocityY;
+		
+		super.update();
 	}
 }

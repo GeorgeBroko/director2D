@@ -6,6 +6,8 @@ import drc.graphics.DrcTileMap;
 import drc.objects.DrcScene;
 import openfl.geom.Rectangle;
 import openfl.utils.Assets;
+import drc.utils.DrcCommon;
+import drc.input.DrcKey;
 
 class TestEmitter extends DrcScene
 {
@@ -28,5 +30,19 @@ class TestEmitter extends DrcScene
 		addGraphic(__tilemap);
 		
 		__emitter = new DrcEmitter(__tilemap);
+		
+		addEmitter(__emitter);
+	}
+	
+	override public function update():Void 
+	{
+		if (DrcCommon.input.keyboard.check(DrcKey.A))
+		{
+			__emitter.emit(320 / 2, 240 / 2);
+		}
+		
+		trace(entities.activeCount);
+		
+		super.update();
 	}
 }

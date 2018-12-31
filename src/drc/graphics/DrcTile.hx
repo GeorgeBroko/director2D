@@ -4,7 +4,6 @@ import drc.display.DrcGraphic;
 import openfl.Vector;
 import openfl.geom.Rectangle;
 
-@:allow(drc.graphics.DrcTileMap)
 class DrcTile extends DrcGraphic //** Define metadata allow.
 {
 	//** Publics.

@@ -1,5 +1,6 @@
 package drc.objects;
 
+import drc.graphics.DrcEmitter;
 import drc.graphics.DrcMesh;
 import drc.objects.DrcEntity;
 import drc.objects.DrcObject;
@@ -20,6 +21,11 @@ class DrcScene extends DrcObject
 	 * The camera of the scene.
 	 */
 	public var camera:DrcCamera = new DrcCamera();
+	
+	/**
+	 * A list of every entity in the scene.
+	 */
+	public var emitters:DrcList<DrcEmitter> = new DrcList<DrcEmitter>();
 	
 	/**
 	 * A list of every entity in the scene.
@@ -63,6 +69,13 @@ class DrcScene extends DrcObject
 		__console = new DrcConsole();
 		
 		#end // ------
+	}
+	
+	public function addEmitter(emitter:DrcEmitter):DrcEmitter
+	{
+		emitter.__scene = this;
+		
+		return emitters.add(emitter);
 	}
 	
 	public function addEntity(entity:DrcEntity):DrcEntity
