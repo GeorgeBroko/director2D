@@ -39,7 +39,7 @@ import haxe.macro.Expr;
 		
 		ManifestResources.init (config);
 		
-		app.meta["build"] = "155";
+		app.meta["build"] = "158";
 		app.meta["company"] = "Elias Fedorenko";
 		app.meta["file"] = "DRC3D";
 		app.meta["name"] = "DRC3D";

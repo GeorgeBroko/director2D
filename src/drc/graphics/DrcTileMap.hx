@@ -29,6 +29,8 @@ class DrcTileMap extends DrcMesh
 	
 	public function addTile(tile:DrcTile):DrcTile
 	{
+		//** WRONG INDICES PUSH! FIX REQUIRED!
+		
 		var position:Int = 4 * tiles.activeCount;
 		
 		tiles.add(tile);

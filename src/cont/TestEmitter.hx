@@ -41,7 +41,7 @@ class TestEmitter extends DrcScene
 			__emitter.emit(mouseX, mouseY, 0, 359);
 		}
 		
-		trace(__tilemap.indices.count);
+		trace(__tilemap.tiles.activeCount);
 		
 		super.update();
 	}
