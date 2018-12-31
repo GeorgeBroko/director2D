@@ -53,6 +53,11 @@ class DrcTile extends DrcGraphic //** Define metadata allow.
 		
 	}
 	
+	override public function remove():Void 
+	{
+		__parent.removeTile(this);
+	}
+	
 	override function set_x(value:Float):Float 
 	{
 		__x = value;

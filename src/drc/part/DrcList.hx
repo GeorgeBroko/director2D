@@ -44,6 +44,10 @@ class DrcList<T:DrcObject>
 	
 	public function add(object:T):T
 	{
+		//** Call init method.
+		
+		object.init();
+		
 		//** Push a new sprite with a new index into members.
 		
 		object.__index = members.push(object) - 1;
@@ -60,8 +64,16 @@ class DrcList<T:DrcObject>
 	
 	public function removeAt(index:Int):Void
 	{
+		//** Call release method.
+		
+		members[index].release();
+		
+		//** If index is lesser than the lenght of the members... 
+		
 		if (index < members.length - 1)
 		{
+			//trace(index);
+			
 			//** Assign the last sprite on the list to the index.
 			
 			members[index] = members[members.length - 1];
@@ -72,7 +84,7 @@ class DrcList<T:DrcObject>
 			
 			//** Return.
 			
-			return;
+			//return;
 		}
 		
 		//** Splice the last sprite on the list.
@@ -95,9 +107,14 @@ class DrcList<T:DrcObject>
 	
 	public function forEachActive(func:T -> Void):Void
 	{
-		for (activeMemberIndex in 0...activeCount) 
+		//for (activeMemberIndex in 0...activeCount) 
+		//{
+			//func(members[activeMemberIndex]);
+		//}
+		
+		for (activeMemberIndex in members)
 		{
-			func(members[activeMemberIndex]);
+			func(activeMemberIndex);
 		}
 	}
 	

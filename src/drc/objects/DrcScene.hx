@@ -80,6 +80,8 @@ class DrcScene extends DrcObject
 	
 	public function addEntity(entity:DrcEntity):DrcEntity
 	{
+		entity.__scene = this;
+		
 		return entities.add(entity);
 	}
 	
@@ -107,6 +109,8 @@ class DrcScene extends DrcObject
 	
 	private function __renderGraphics(graphic:DrcMesh):Void
 	{
+		//trace(entities.count);
+		
 		//** Render the graphic.
 		
 		graphic.render();

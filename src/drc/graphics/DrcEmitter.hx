@@ -4,6 +4,7 @@ import drc.graphics.DrcParticle;
 import drc.graphics.DrcTileMap;
 import drc.objects.DrcObject;
 import drc.objects.DrcScene;
+import drc.utils.DrcCommon;
 import openfl.Vector;
 
 @:allow(drc.objects.DrcScene)
@@ -49,17 +50,23 @@ class DrcEmitter extends DrcObject
 		
 	}
 	
-	public function emit(x:Float, y:Float):Void
+	public function emit(x:Float, y:Float, angle:Float, angleRange:Float):Void
 	{
 		var particle:DrcParticle = new DrcParticle();
+		
+		var radian = angle * (Math.PI / -180);
+		
+		var radianRage = angleRange * (Math.PI / -180);
+		
+		particle.duration = 2;
 		
 		particle.x = x;
 		
 		particle.y = y;
 		
-		particle.velocityX = Math.random() * 7 + 1;
+		particle.velocityX = Math.cos(radian + radianRage * DrcCommon.random());
 		
-		particle.velocityY = Math.random() * 7 + 1;
+		particle.velocityY = Math.sin(radian + radianRage * DrcCommon.random());
 		
 		particle.graphic = parent.addTile(new DrcTile(parent, 0, 0, 0));
 		

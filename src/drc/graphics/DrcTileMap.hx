@@ -29,7 +29,7 @@ class DrcTileMap extends DrcMesh
 	
 	public function addTile(tile:DrcTile):DrcTile
 	{
-		var position:Int = 4 * tiles.count;
+		var position:Int = 4 * tiles.activeCount;
 		
 		tiles.add(tile);
 		
@@ -51,11 +51,15 @@ class DrcTileMap extends DrcMesh
 	public function removeTile(tile:DrcTile):Void
 	{
 		tiles.remove(tile);
+		
+		indices.innerData.splice(0, 6);
 	}
 	
 	public function removeTileAt(index:Int):Void
 	{
 		tiles.removeAt(index);
+		
+		indices.innerData.splice(0, 6);
 	}
 	
 	override function render():Void

@@ -112,12 +112,7 @@ class DrcGraphic extends DrcObject
 		__y = y;
 	}
 	
-	public function added():Void
-	{
-		
-	}
-	
-	public function removed():Void
+	public function remove():Void
 	{
 		
 	}

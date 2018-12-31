@@ -3,17 +3,22 @@ package drc.objects;
 import drc.display.DrcGraphic;
 import drc.objects.DrcObject;
 
+@:allow(drc.objects.DrcScene)
 class DrcEntity extends DrcObject
 {
 	//** Publics.
 	
 	public var graphic:DrcGraphic;
 	
+	public var scene(get, null):DrcScene;
+	
 	public var x(get, set):Float;
 	
 	public var y(get, set):Float;
 	
 	//** Privates.
+	
+	private var __scene:DrcScene;
 	
 	private var __x:Float = 0;
 	
@@ -24,6 +29,20 @@ class DrcEntity extends DrcObject
 		super();
 	}
 	
+	override public function init():Void 
+	{
+		super.init();
+	}
+	
+	override public function release():Void 
+	{
+		super.release();
+		
+		trace("Remove");
+		
+		graphic.remove();
+	}
+	
 	public function update():Void
 	{
 		graphic.x = __x;
@@ -32,6 +51,11 @@ class DrcEntity extends DrcObject
 	}
 	
 	//** Getters and setters.
+	
+	private function get_scene():DrcScene
+	{
+		return __scene;
+	}
 	
 	private function get_x():Float
 	{

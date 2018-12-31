@@ -38,10 +38,10 @@ class TestEmitter extends DrcScene
 	{
 		if (DrcCommon.input.keyboard.check(DrcKey.A))
 		{
-			__emitter.emit(320 / 2, 240 / 2);
+			__emitter.emit(mouseX, mouseY, 0, 359);
 		}
 		
-		trace(entities.activeCount);
+		trace(__tilemap.indices.count);
 		
 		super.update();
 	}
