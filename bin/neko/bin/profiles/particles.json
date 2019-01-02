@@ -1,0 +1,29 @@
+{
+	"name": "particles",
+	
+	"dataPerVertex": 6,
+	
+	"attributes":[
+	
+	{"name": "space", "format": "float4", "position": 0},
+	
+	{"name": "texture", "format": "float2", "position": 4},
+	
+	{"name": "color", "format": "float4", "position": 6}
+	
+	],
+	
+	"constants":[
+	
+	{"name": "color", "format": "float4"},
+	
+	{"name": "other", "format": "float4"}
+	
+	],
+	
+	"programName": "particles",
+	
+	"vertexShader": "particles.vert",
+	
+	"fragmentShader": "particles.frag"
+}

@@ -8,6 +8,7 @@ import openfl.geom.Rectangle;
 import openfl.utils.Assets;
 import drc.utils.DrcCommon;
 import drc.input.DrcKey;
+import drc.graphics.DrcMesh;
 
 class TestEmitter extends DrcScene
 {
@@ -21,9 +22,9 @@ class TestEmitter extends DrcScene
 	{
 		super();
 		
-		__profile = new DrcProfile("profiles/default.json");
+		__profile = new DrcProfile("profiles/particles.json");
 		
-		__tilemap = new DrcTileMap(__profile, Assets.getBitmapData("textures/particle.png"));
+		__tilemap = new DrcTileMap(__profile, Assets.getBitmapData("textures/rect.png"));
 		
 		__tilemap.regions.push(new Rectangle(0, 0, 16, 16));
 		

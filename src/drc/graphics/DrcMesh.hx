@@ -6,7 +6,9 @@ import drc.display.DrcTexture;
 import drc.geom.DrcMatrix;
 import drc.display.DrcGraphic;
 import openfl.Vector;
+import drc.core.DrcMacros;
 
+#if !macro @:build(drc.core.DrcMacros.build(["Aaron", "Bobbi", "Carol", "Dennis", "Eric", "Frank"])) #end
 class DrcMesh extends DrcGraphic
 {
 	//** Publics.
@@ -42,6 +44,13 @@ class DrcMesh extends DrcGraphic
 		this.profile = profile;
 		
 		vertices.__dataPerVertex = profile.dataPerVertex;
+		
+		//trace(namesHashed.get("Aaron"));
+	}
+	
+	public function getAttributes():Void
+	{
+		
 	}
 	
 	override public function render():Void 

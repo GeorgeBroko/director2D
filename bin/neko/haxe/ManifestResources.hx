@@ -100,6 +100,7 @@ null
 @:keep @:bind #if display private #end class __ASSET__fonts_opensans_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__profiles_debug_json extends null { }
 @:keep @:bind #if display private #end class __ASSET__profiles_default_json extends null { }
+@:keep @:bind #if display private #end class __ASSET__profiles_particles_json extends null { }
 @:keep @:bind #if display private #end class __ASSET__profiles_screen_json extends null { }
 @:keep @:bind #if display private #end class __ASSET__profiles_ui_json extends null { }
 @:keep @:bind #if display private #end class __ASSET__scripts_gamepad_json extends null { }
@@ -108,6 +109,8 @@ null
 @:keep @:bind #if display private #end class __ASSET__music_cutthefat_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__shaders_default_frag extends null { }
 @:keep @:bind #if display private #end class __ASSET__shaders_default_vert extends null { }
+@:keep @:bind #if display private #end class __ASSET__shaders_particles_frag extends null { }
+@:keep @:bind #if display private #end class __ASSET__shaders_particles_vert extends null { }
 @:keep @:bind #if display private #end class __ASSET__shaders_screen_frag extends null { }
 @:keep @:bind #if display private #end class __ASSET__shaders_screen_vert extends null { }
 @:keep @:bind #if display private #end class __ASSET__shaders_ui_frag extends null { }
