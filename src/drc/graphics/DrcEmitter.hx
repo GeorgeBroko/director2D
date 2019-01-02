@@ -60,7 +60,9 @@ class DrcEmitter extends DrcObject
 		
 		particle.duration = 4;
 		
-		particle.gravity = 2;
+		particle.gravity = 3;
+		
+		particle.rotation = 1 + (2 * DrcCommon.random());
 		
 		particle.x = x;
 		
@@ -71,6 +73,10 @@ class DrcEmitter extends DrcObject
 		particle.velocityY = Math.sin(radian + radianRage * DrcCommon.random());
 		
 		particle.graphic = parent.addTile(new DrcTile(parent, 0, x, y));
+		
+		particle.graphic.originX = 8;
+		
+		particle.graphic.originY = 8;
 		
 		particles.push(__scene.addEntity(particle).index);
 	}

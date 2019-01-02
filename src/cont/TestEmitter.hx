@@ -23,7 +23,7 @@ class TestEmitter extends DrcScene
 		
 		__profile = new DrcProfile("profiles/default.json");
 		
-		__tilemap = new DrcTileMap(__profile, Assets.getBitmapData("textures/rect.png"));
+		__tilemap = new DrcTileMap(__profile, Assets.getBitmapData("textures/particle.png"));
 		
 		__tilemap.regions.push(new Rectangle(0, 0, 16, 16));
 		
@@ -36,12 +36,10 @@ class TestEmitter extends DrcScene
 	
 	override public function update():Void 
 	{
-		if (DrcCommon.input.keyboard.check(DrcKey.A))
+		if (DrcCommon.input.mouse.check(0))
 		{
 			__emitter.emit(mouseX, mouseY, 45, 135);
 		}
-		
-		//trace(__tilemap.indices.count);
 		
 		super.update();
 	}

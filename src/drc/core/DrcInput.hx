@@ -118,7 +118,7 @@ class DrcInput //** Define metadata: final.
 		
 		//** If mouse is enabled...
 		
-		if (inputScript.get("Mouse"))
+		if (inputScript.get("mouse"))
 		{
 			//** Create a new mouse class.
 			
@@ -200,7 +200,7 @@ class DrcInput //** Define metadata: final.
 		
 		//** Post update the mouse.
 		
-		//mouse.postUpdate();
+		mouse.postUpdate();
 	}
 	
 	// ** Getters and setters.

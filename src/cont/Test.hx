@@ -69,6 +69,9 @@ class Test extends DrcScene
 		__tile.x = 32;
 		__tile.y = 32;
 		
+		__tile.originX = 16;
+		__tile.originY = 16;
+		
 		//__tile.scaleX = 4;
 		//__tile.scaleY = 4;
 		

@@ -94,7 +94,7 @@ class DrcTile extends DrcGraphic //** Define metadata allow.
 		
 		vertices.innerData[12] = (__x + offsetX) + (cosT * (scaledWidth - centerX)) + (sinT * (scaledHeight - centerY));
 		
-		vertices.innerData[18] =  (__x + offsetX) + (cosT * (scaledWidth + centerX)) - (sinT * centerY);
+		vertices.innerData[18] =  (__x + offsetX) + (cosT * (scaledWidth - centerX)) - (sinT * centerY);
 		
 		vertices.innerData[1] = (__y + offsetY) + (sinT * centerX) - (cosT * centerY);
 		

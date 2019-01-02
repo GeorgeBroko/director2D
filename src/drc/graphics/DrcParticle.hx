@@ -1,6 +1,5 @@
 package drc.graphics;
 
-import drc.graphics.DrcTile;
 import drc.objects.DrcEntity;
 
 class DrcParticle extends DrcEntity
@@ -12,6 +11,8 @@ class DrcParticle extends DrcEntity
 	public var velocityY:Float;
 	
 	public var gravity:Float;
+	
+	public var rotation:Float;
 	
 	//** Privates.
 	
@@ -33,9 +34,11 @@ class DrcParticle extends DrcEntity
 			return;
 		}
 		
-		x += velocityX;
+		graphic.angle += rotation;
 		
-		y += velocityY + (gravity * __time);
+		x += velocityX * 2;
+		
+		y += (velocityY * 5) + (gravity * __time);
 		
 		super.update();
 	}

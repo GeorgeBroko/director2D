@@ -52,9 +52,7 @@ class DrcTileMap extends DrcMesh
 	
 	public function removeTile(tile:DrcTile):Void
 	{
-		tiles.remove(tile);
-		
-		indices.innerData.splice(indices.count - 6, 6);
+		removeTileAt(tile.index);
 	}
 	
 	public function removeTileAt(index:Int):Void

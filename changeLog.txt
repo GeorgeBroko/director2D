@@ -1,4 +1,6 @@
 0.3.4.1 (02/01/2019)
 
-Fixed tilemap bug when pushing indices.
+Fixed tilemap: bug when on inserting new indices.
+Fixed tile: Bug on vertex manipulation. 
 Added gravity to the particle system.
+Added rotation to the particle system.
