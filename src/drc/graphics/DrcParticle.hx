@@ -11,6 +11,8 @@ class DrcParticle extends DrcEntity
 	
 	public var velocityY:Float;
 	
+	public var gravity:Float;
+	
 	//** Privates.
 	
 	private var __time:Float = 0;
@@ -33,7 +35,7 @@ class DrcParticle extends DrcEntity
 		
 		x += velocityX;
 		
-		y += velocityY;
+		y += velocityY + (gravity * __time);
 		
 		super.update();
 	}

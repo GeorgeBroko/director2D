@@ -1,0 +1,4 @@
+0.3.4.1 (02/01/2019)
+
+Fixed tilemap bug when pushing indices.
+Added gravity to the particle system.

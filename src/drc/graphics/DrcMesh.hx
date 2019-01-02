@@ -41,20 +41,7 @@ class DrcMesh extends DrcGraphic
 		
 		this.profile = profile;
 		
-		//vertices.upload(new Vector<Float>(
-		//[0, 0, 0, 0, 1, 
-		//0, -480, 0, 0, 0, 
-		//640, -480, 0, 1, 0, 
-		//640, 0, 0, 1, 1]));
-		
-		vertices.upload(new Vector<Float>(
-		[0, 0, 0, 0, 1, 
-		0, 960, 0, 0, -1,  
-		1280, 0, 0, 2, 1]));
-		
 		vertices.__dataPerVertex = profile.dataPerVertex;
-		
-		indices.upload(new Vector<UInt>([0, 1, 2]));
 	}
 	
 	override public function render():Void 

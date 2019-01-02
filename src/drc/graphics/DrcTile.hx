@@ -35,10 +35,12 @@ class DrcTile extends DrcGraphic //** Define metadata allow.
 		
 		__y = y;
 		
-		for (vertex in 0...4)
-		{
-			vertices.insert(__parent.profile.dataPerVertex);
-		}
+		//for (vertex in 0...4)
+		//{
+			//vertices.insert(__parent.profile.dataPerVertex);
+		//}
+		
+		vertices.insert(__parent.profile.dataPerVertex * 4);
 		
 		this.id = id;
 	}

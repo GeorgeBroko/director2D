@@ -38,8 +38,6 @@ class DrcEntity extends DrcObject
 	{
 		super.release();
 		
-		trace("Remove");
-		
 		graphic.remove();
 	}
 	

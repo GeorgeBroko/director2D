@@ -1,10 +1,11 @@
 package drc.core;
 
-import drc.graphics.DrcMesh;
 import drc.display.DrcProfile;
 import drc.geom.DrcMatrix;
+import drc.graphics.DrcMesh;
 import drc.objects.DrcCamera;
 import drc.utils.DrcCommon;
+import openfl.Vector;
 import openfl.display3D.Context3D;
 import openfl.display3D.Context3DBlendFactor;
 import openfl.display3D.Context3DMipFilter;
@@ -57,6 +58,13 @@ class DrcScreen extends DrcMesh
 		//** Pass the context to a private variable.
 		
 		__context = DrcCommon.view.context;
+		
+		vertices.upload(new Vector<Float>(
+		[0, 0, 0, 0, 1, 
+		0, 960, 0, 0, -1,  
+		1280, 0, 0, 2, 1]));
+		
+		indices.upload(new Vector<UInt>([0, 1, 2]));
 		
 		//** Create an empty texture.
 		

@@ -25,12 +25,12 @@ class DrcTileMap extends DrcMesh
 		{
 			regions = rects;
 		}
+		
+		trace(indices.innerData);
 	}
 	
 	public function addTile(tile:DrcTile):DrcTile
 	{
-		//** WRONG INDICES PUSH! FIX REQUIRED!
-		
 		var position:Int = 4 * tiles.activeCount;
 		
 		tiles.add(tile);
@@ -54,14 +54,14 @@ class DrcTileMap extends DrcMesh
 	{
 		tiles.remove(tile);
 		
-		indices.innerData.splice(0, 6);
+		indices.innerData.splice(indices.count - 6, 6);
 	}
 	
 	public function removeTileAt(index:Int):Void
 	{
 		tiles.removeAt(index);
 		
-		indices.innerData.splice(0, 6);
+		indices.innerData.splice(indices.count - 6, 6);
 	}
 	
 	override function render():Void

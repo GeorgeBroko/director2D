@@ -58,7 +58,9 @@ class DrcEmitter extends DrcObject
 		
 		var radianRage = angleRange * (Math.PI / -180);
 		
-		particle.duration = 2;
+		particle.duration = 4;
+		
+		particle.gravity = 2;
 		
 		particle.x = x;
 		
@@ -68,9 +70,19 @@ class DrcEmitter extends DrcObject
 		
 		particle.velocityY = Math.sin(radian + radianRage * DrcCommon.random());
 		
-		particle.graphic = parent.addTile(new DrcTile(parent, 0, 0, 0));
+		particle.graphic = parent.addTile(new DrcTile(parent, 0, x, y));
 		
 		particles.push(__scene.addEntity(particle).index);
+	}
+	
+	public function setGravity():Void
+	{
+		
+	}
+	
+	public function setMotion():Void
+	{
+		
 	}
 	
 	//** Getters and setters.

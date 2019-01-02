@@ -25,7 +25,7 @@ class TestEmitter extends DrcScene
 		
 		__tilemap = new DrcTileMap(__profile, Assets.getBitmapData("textures/rect.png"));
 		
-		__tilemap.regions.push(new Rectangle(0, 0, 45, 45));
+		__tilemap.regions.push(new Rectangle(0, 0, 16, 16));
 		
 		addGraphic(__tilemap);
 		
@@ -38,10 +38,10 @@ class TestEmitter extends DrcScene
 	{
 		if (DrcCommon.input.keyboard.check(DrcKey.A))
 		{
-			__emitter.emit(mouseX, mouseY, 0, 359);
+			__emitter.emit(mouseX, mouseY, 45, 135);
 		}
 		
-		trace(__tilemap.tiles.activeCount);
+		//trace(__tilemap.indices.count);
 		
 		super.update();
 	}
