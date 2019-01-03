@@ -87,14 +87,31 @@ class DrcTile extends DrcGraphic //** Define metadata allow.
 		
 		var centerX:Float = originX;
         var centerY:Float = originX;
+		//
+		//vertices.innerData[0] = (__x + offsetX) - (cosT * centerX) - (sinT * centerY);
+		//
+		//vertices.innerData[6] = (__x + offsetX) - (cosT * centerX) + (sinT * (scaledHeight - centerY)); 
+		//
+		//vertices.innerData[12] = (__x + offsetX) + (cosT * (scaledWidth - centerX)) + (sinT * (scaledHeight - centerY));
+		//
+		//vertices.innerData[18] =  (__x + offsetX) + (cosT * (scaledWidth - centerX)) - (sinT * centerY);
+		//
+		//vertices.innerData[1] = (__y + offsetY) + (sinT * centerX) - (cosT * centerY);
+		//
+		//vertices.innerData[7] = (__y + offsetY) + (sinT * centerX) + (cosT * (scaledHeight - centerY));
+		//
+		//vertices.innerData[13] = (__y + offsetY) - (sinT * (scaledWidth - centerX)) + (cosT * (scaledHeight - centerY));
+		//
+		//vertices.innerData[19] = (__y + offsetY) - (sinT * (scaledWidth - centerX)) - (cosT * centerY);
 		
-		vertices.innerData[0] = (__x + offsetX) - (cosT * centerX) - (sinT * centerY);
 		
-		vertices.innerData[6] = (__x + offsetX) - (cosT * centerX) + (sinT * (scaledHeight - centerY)); 
+		vertices.innerData[__parent.profile.attributes[0].pointers[0].locations[0]] = (__x + offsetX) - (cosT * centerX) - (sinT * centerY);
 		
-		vertices.innerData[12] = (__x + offsetX) + (cosT * (scaledWidth - centerX)) + (sinT * (scaledHeight - centerY));
+		vertices.innerData[__parent.profile.attributes[0].pointers[0].locations[1]] = (__x + offsetX) - (cosT * centerX) + (sinT * (scaledHeight - centerY)); 
 		
-		vertices.innerData[18] =  (__x + offsetX) + (cosT * (scaledWidth - centerX)) - (sinT * centerY);
+		vertices.innerData[__parent.profile.attributes[0].pointers[0].locations[2]] = (__x + offsetX) + (cosT * (scaledWidth - centerX)) + (sinT * (scaledHeight - centerY));
+		
+		vertices.innerData[__parent.profile.attributes[0].pointers[0].locations[3]] =  (__x + offsetX) + (cosT * (scaledWidth - centerX)) - (sinT * centerY);
 		
 		vertices.innerData[1] = (__y + offsetY) + (sinT * centerX) - (cosT * centerY);
 		

@@ -15,9 +15,19 @@ class DrcTileMap extends DrcMesh
 	
 	public var tiles:DrcList<DrcTile> = new DrcList<DrcTile>();
 	
+	//** Privates.
+	
+	private var __vertexPositions:Vector<Float>;
+	
+	private var __vertexTexture:Vector<Float>;
+	
 	public function new(profile:DrcProfile, bitmapData:BitmapData, ?rects:Vector<Rectangle>) 
 	{
+		//** Super...
+		
 		super(profile);
+		
+		//** Upload a texture.
 		
 		texture.upload(bitmapData);
 		
@@ -26,7 +36,9 @@ class DrcTileMap extends DrcMesh
 			regions = rects;
 		}
 		
-		trace(indices.innerData);
+		//__vertexPositions = new Vector<Float>(profile.attributes[0]. * 4, true);
+		
+		//__vertexTexture = new Vector<Float>(profile.dataPerVertex[1] * 4, true);
 	}
 	
 	public function addTile(tile:DrcTile):DrcTile

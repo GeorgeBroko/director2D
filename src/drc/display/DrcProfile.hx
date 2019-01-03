@@ -3,9 +3,12 @@ package drc.display;
 import drc.core.DrcScript;
 import drc.data.DrcAttribute;
 import drc.data.DrcConstant;
-import openfl.Vector;
-import openfl.Assets;
+import drc.data.DrcPointer;
 import drc.utils.DrcCommon;
+import openfl.Assets;
+import openfl.Vector;
+import haxe.Json;
+import openfl.utils.Assets;
 
 class DrcProfile 
 {
@@ -50,15 +53,17 @@ class DrcProfile
 		
 	}
 	
-	public function upload(path:String):Void
+	public function upload(path:String, ?n:String):Void
 	{
 		//** TODO: Clean up code!
 		
-		var script:DrcScript = new DrcScript(path);
+		var script:Dynamic = Json.parse(Assets.getText(path));
 		
-		dataPerVertex = script.get("dataPerVertex");
+		trace(script.name);
 		
-		var objects:Array<Dynamic> = script.get("attributes");
+		dataPerVertex = script.dataPerVertex;
+		
+		var objects:Dynamic = Reflect.field(script, "attributes");
 		
 		//if (objects[0].name != "space")
 		//{
@@ -70,14 +75,41 @@ class DrcProfile
 			//attributes.push(new DrcAttribute("texture", "float2", 3));
 		//}
 		
+		//var struct:Dynamic;
+		
+		//trace(objects.length);
+		
 		for (i in 0...objects.length)
 		{
-			attributes.push(new DrcAttribute(objects[i].name, objects[i].format, objects[i].position));
+			var att:DrcAttribute = new DrcAttribute(objects[i].name, objects[i].format, objects[i].position, objects[i].count);
+			
+			var struct:Dynamic = Reflect.field(objects[i], "struct");
+			
+			var vec:Vector<Int> = new Vector<Int>(4, true);
+			
+			//trace(objects[i].struct);
+			
+			for (j in 0...struct.length)
+			{
+				vec[0] = struct[j].offset;
+				
+				//trace(vec[0]);
+				
+				vec[1] = Std.int(vec[0] + dataPerVertex);
+				vec[2] = Std.int(vec[0] + dataPerVertex * 2);
+				vec[3] = Std.int(vec[0] + dataPerVertex * 3);
+				
+				att.pointers.push(new DrcPointer(struct[j].name, vec));
+			}
+			
+			trace(att.pointers);
+			
+			attributes.push(att);
 		}
 		
 		//constants = new Vector<DrcConstant>(script.get("constantCount"), true);
 		
-		program = new DrcProgram(script.get("programName"));
+		program = new DrcProgram(Reflect.field(script, "programName"));
 		
 		#if flash // ------
 		
@@ -93,9 +125,9 @@ class DrcProfile
 		
 		#end // ------
 		
-		program.upload(Assets.getText("shaders/" + script.get("vertexShader")), Assets.getText("shaders/" + script.get("fragmentShader")));
+		program.upload(Assets.getText("shaders/" + Reflect.field(script, "vertexShader")), Assets.getText("shaders/" + Reflect.field(script, "fragmentShader")));
 		
-		var const:Array<Dynamic> = script.get("constants");
+		var const:Array<Dynamic> = Reflect.field(script, "constants");
 		
 		constants.push(new DrcConstant("matrix", getUniformLocation("_matrix")));
 		

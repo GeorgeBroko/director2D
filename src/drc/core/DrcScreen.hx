@@ -137,7 +137,7 @@ class DrcScreen extends DrcMesh
 		
 		if (mesh.vertices.innerData.length == 0)
 		{
-			trace("Nothing to render!");
+			//trace("Nothing to render!");
 			
 			return;
 		}

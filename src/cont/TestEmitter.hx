@@ -22,7 +22,7 @@ class TestEmitter extends DrcScene
 	{
 		super();
 		
-		__profile = new DrcProfile("profiles/particles.json");
+		__profile = new DrcProfile("profiles/default.json");
 		
 		__tilemap = new DrcTileMap(__profile, Assets.getBitmapData("textures/rect.png"));
 		

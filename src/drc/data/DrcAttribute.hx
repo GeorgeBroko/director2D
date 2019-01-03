@@ -1,20 +1,26 @@
 package drc.data;
 
 import openfl.display3D.Context3DVertexBufferFormat;
+import openfl.Vector;
+import drc.data.DrcPointer;
 
 class DrcAttribute 
 {
 	//** Publics.
 	
 	/**
+	 * The foramt of the attribute.
+	 */
+	public var format(get, null):Context3DVertexBufferFormat;
+	
+	public var locations:Vector<Int>;
+	
+	/**
 	 * The name of the attribute.
 	 */
 	public var name(get, null):String;
 	
-	/**
-	 * The foramt of the attribute.
-	 */
-	public var format(get, null):Context3DVertexBufferFormat;
+	public var pointers:Vector<DrcPointer>;
 	
 	/**
 	 * The position of the attribute.
@@ -29,8 +35,10 @@ class DrcAttribute
 	
 	private var __position:Int;
 	
-	public function new(name:String, format:String, position:Int) 
+	public function new(name:String, format:String, position:Int, lenght:Int) 
 	{
+		pointers = new Vector<DrcPointer>();
+		
 		__name = name;
 		
 		__format = format;

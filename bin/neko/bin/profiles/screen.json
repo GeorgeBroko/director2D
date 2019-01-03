@@ -5,9 +5,23 @@
 	
 	"attributes":[
 	
-	{"name": "space", "format": "float3", "position": 0},
+	{"name": "space", "format": "float3", "position": 0, "count": 3, "struct":[
 	
-	{"name": "texture", "format": "float2", "position": 3}
+	{"name": "x", "offset" : 0},
+	
+	{"name": "y", "offset" : 1},
+	
+	{"name": "z", "offset" : 2}]
+	
+	},
+	
+	{"name": "texture", "format": "float2", "position": 3, "count": 2, "struct":[
+	
+	{"name": "u", "offset" : 4},
+	
+	{"name": "v", "offset" : 5}]
+	
+	}
 	
 	],
 	

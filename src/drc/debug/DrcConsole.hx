@@ -10,7 +10,7 @@ class DrcConsole
 	
 	public function new() 
 	{
-		__tilemap = new DrcTileMap(new DrcProfile("profiles/debug.json"), Assets.getBitmapData("textures/debug.png"));
+		//__tilemap = new DrcTileMap(new DrcProfile("profiles/debug.json"), Assets.getBitmapData("textures/debug.png"));
 		
 		
 	}
