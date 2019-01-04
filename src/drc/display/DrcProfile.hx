@@ -85,15 +85,24 @@ class DrcProfile
 			
 			var struct:Dynamic = Reflect.field(objects[i], "struct");
 			
-			var vec:Vector<Int> = new Vector<Int>(4, true);
+			
 			
 			//trace(objects[i].struct);
 			
 			for (j in 0...struct.length)
 			{
-				vec[0] = struct[j].offset;
+				var vec:Vector<Int> = new Vector<Int>();
+				
+				//trace(struct[j].offset);
+				
+				vec[0] = Std.int(struct[j].offset);
+				//vec.push(Reflect.field(struct[j], "offset"));
 				
 				//trace(vec[0]);
+				
+				//vec[1] = vec[0];
+				//vec[2] = vec[0];
+				//vec[3] = vec[0];
 				
 				vec[1] = Std.int(vec[0] + dataPerVertex);
 				vec[2] = Std.int(vec[0] + dataPerVertex * 2);

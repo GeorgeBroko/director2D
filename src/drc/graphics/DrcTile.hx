@@ -3,6 +3,8 @@ package drc.graphics;
 import drc.display.DrcGraphic;
 import openfl.Vector;
 import openfl.geom.Rectangle;
+import haxe.ds.StringMap;
+import Map;
 
 class DrcTile extends DrcGraphic //** Define metadata allow.
 {
@@ -113,13 +115,13 @@ class DrcTile extends DrcGraphic //** Define metadata allow.
 		
 		vertices.innerData[__parent.profile.attributes[0].pointers[0].locations[3]] =  (__x + offsetX) + (cosT * (scaledWidth - centerX)) - (sinT * centerY);
 		
-		vertices.innerData[1] = (__y + offsetY) + (sinT * centerX) - (cosT * centerY);
+		vertices.innerData[__parent.profile.attributes[0].pointers[1].locations[0]] = (__y + offsetY) + (sinT * centerX) - (cosT * centerY);
 		
-		vertices.innerData[7] = (__y + offsetY) + (sinT * centerX) + (cosT * (scaledHeight - centerY));
+		vertices.innerData[__parent.profile.attributes[0].pointers[1].locations[1]] = (__y + offsetY) + (sinT * centerX) + (cosT * (scaledHeight - centerY));
 		
-		vertices.innerData[13] = (__y + offsetY) - (sinT * (scaledWidth - centerX)) + (cosT * (scaledHeight - centerY));
+		vertices.innerData[__parent.profile.attributes[0].pointers[1].locations[2]] = (__y + offsetY) - (sinT * (scaledWidth - centerX)) + (cosT * (scaledHeight - centerY));
 		
-		vertices.innerData[19] = (__y + offsetY) - (sinT * (scaledWidth - centerX)) - (cosT * centerY);
+		vertices.innerData[__parent.profile.attributes[0].pointers[1].locations[3]] = (__y + offsetY) - (sinT * (scaledWidth - centerX)) - (cosT * centerY);
 	}
 	
 	//** Getters and setters.
